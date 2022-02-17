@@ -1,0 +1,31 @@
+name: 'MyFirstCICD'
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+
+jobs:
+  Build:
+    name: 'Terraform'
+    runs-on: ubuntu-latest
+    environment: production
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Create a file
+      run: echo "test" >> abc.txt
+      
+    - name: list of files
+      run: ls -lrt
+     
+    - name: Read the File
+      run: cat abc.txt
