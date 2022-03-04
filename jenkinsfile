@@ -17,7 +17,6 @@ agent { label 'agent' }
 					stage('Build') {
 						steps {
 							echo "Do Build for ${PLATFORM} - ${BROWSER}"
-							sleep 30
 						}
 					}
 				}
